@@ -1,5 +1,4 @@
 # LeakMan
-Lien sur le WIki du projet : https://gitlab-etu.ing.he-arc.ch/isc/2021-22/niveau-2/2282-1-projet-p2-il-sp/g6/-/wikis/home
 
 Description : Le jeu se présente sous la forme suivante. Un stickman (bonhomme bâton) est lâché dans un niveau en 2D et se met à avancer tout droit et sans s'arrêter. Le joueur ne peut pas contrôler le personnage, mais peut (comme dans une partie de lemmings) altérer le niveau de façon à ce que le stickman arrive à la fin du niveau.
 
