@@ -1,0 +1,152 @@
+\hypertarget{class_state}{}\doxysection{State Class Reference}
+\label{class_state}\index{State@{State}}
+
+
+The class used to separate different views within the game and holds its respective elements.  
+
+
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+Inheritance diagram for State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_a649fea964c3fb765bd4bbc6ae55ddffb}\label{class_state_a649fea964c3fb765bd4bbc6ae55ddffb}} 
+{\bfseries State} (const \mbox{\hyperlink{class_state}{State}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_state_a399d8b36294defbb5e7af488a459a9e5}\label{class_state_a399d8b36294defbb5e7af488a459a9e5}} 
+{\bfseries State} (\mbox{\hyperlink{class_state}{State}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{class_state_afa76ec47c297745c61b8954df6647a48}\label{class_state_afa76ec47c297745c61b8954df6647a48}} 
+\mbox{\hyperlink{class_state}{State}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_state}{State}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_state_a2960404ad575e527720fc3be066fdd96}\label{class_state_a2960404ad575e527720fc3be066fdd96}} 
+\mbox{\hyperlink{class_state}{State}} \& {\bfseries operator=} (\mbox{\hyperlink{class_state}{State}} \&\&)=delete
+\item 
+virtual bool \mbox{\hyperlink{class_state_af8a27f842792e7580042d1d05b4e788b}{update}} (qreal dt)
+\begin{DoxyCompactList}\small\item\em Updates the state\textquotesingle{}s elements every frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_a9ae8e350fb1caeee70733b3c6479eb33}\label{class_state_a9ae8e350fb1caeee70733b3c6479eb33}} 
+{\bfseries State} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} $\ast$state\+Stack, QMain\+Window $\ast$window)
+\item 
+void \mbox{\hyperlink{class_state_a16992b94315248b2d782023c9c91040e}{request\+State\+Push}} (uint32\+\_\+t state\+Id)
+\begin{DoxyCompactList}\small\item\em Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to push a new state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_a169b1ec0de4b43771127a95fd609b887}{request\+State\+Remove}} (uint32\+\_\+t state\+Id)
+\begin{DoxyCompactList}\small\item\em Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to remove a speficic state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_a4b602bed9bf0179ee5f6748fce340ae6}{request\+State\+Clear}} ()
+\begin{DoxyCompactList}\small\item\em Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to remove all states. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}} $\ast$ \mbox{\hyperlink{class_state_aa76d4a08d1305724a909baf0b0ad2ed8}{request\+State}} (uint32\+\_\+t state\+Id)
+\begin{DoxyCompactList}\small\item\em Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to retrieve a specific state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_aadb58ca802003404d8037850da84fc5e}\label{class_state_aadb58ca802003404d8037850da84fc5e}} 
+QGraphics\+Scene $\ast$ {\bfseries m\+Scene}
+\item 
+\mbox{\Hypertarget{class_state_a2c8a3ed534e8eec170e8bd46a53499d8}\label{class_state_a2c8a3ed534e8eec170e8bd46a53499d8}} 
+QMain\+Window $\ast$ {\bfseries m\+Window}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class used to separate different views within the game and holds its respective elements. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_aa76d4a08d1305724a909baf0b0ad2ed8}\label{class_state_aa76d4a08d1305724a909baf0b0ad2ed8}} 
+\index{State@{State}!requestState@{requestState}}
+\index{requestState@{requestState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{requestState()}{requestState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state}{State}} $\ast$ State\+::request\+State (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to retrieve a specific state. 
+
+\begin{DoxyNote}{Note}
+The state requested must be pushed onto the stack prior to calling this method. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Id} & The identifier associated to a state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the \mbox{\hyperlink{class_state}{State}} requested or nullptr if the state hasn\textquotesingle{}t been pushed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_a4b602bed9bf0179ee5f6748fce340ae6}\label{class_state_a4b602bed9bf0179ee5f6748fce340ae6}} 
+\index{State@{State}!requestStateClear@{requestStateClear}}
+\index{requestStateClear@{requestStateClear}!State@{State}}
+\doxysubsubsection{\texorpdfstring{requestStateClear()}{requestStateClear()}}
+{\footnotesize\ttfamily void State\+::request\+State\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to remove all states. 
+
+The request is placed into a queue which will be polled on the next frame. \mbox{\Hypertarget{class_state_a16992b94315248b2d782023c9c91040e}\label{class_state_a16992b94315248b2d782023c9c91040e}} 
+\index{State@{State}!requestStatePush@{requestStatePush}}
+\index{requestStatePush@{requestStatePush}!State@{State}}
+\doxysubsubsection{\texorpdfstring{requestStatePush()}{requestStatePush()}}
+{\footnotesize\ttfamily void State\+::request\+State\+Push (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to push a new state. 
+
+The request is placed into a queue which will be polled on the next frame. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Id} & The identifier associated to a state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_a169b1ec0de4b43771127a95fd609b887}\label{class_state_a169b1ec0de4b43771127a95fd609b887}} 
+\index{State@{State}!requestStateRemove@{requestStateRemove}}
+\index{requestStateRemove@{requestStateRemove}!State@{State}}
+\doxysubsubsection{\texorpdfstring{requestStateRemove()}{requestStateRemove()}}
+{\footnotesize\ttfamily void State\+::request\+State\+Remove (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Requests the \mbox{\hyperlink{class_state_stack}{State\+Stack}} to remove a speficic state. 
+
+The request is placed into a queue which will be polled on the next frame. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Id} & The identifier associated to a state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_af8a27f842792e7580042d1d05b4e788b}\label{class_state_af8a27f842792e7580042d1d05b4e788b}} 
+\index{State@{State}!update@{update}}
+\index{update@{update}!State@{State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool State\+::update (\begin{DoxyParamCaption}\item[{qreal}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state\textquotesingle{}s elements every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The time difference between this frame and the previous one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to allow the other states to update their elements, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_game_state_a81b2a4f88bf9525a4c1b4e9e3e3c8c92}{Game\+State}}, \mbox{\hyperlink{class_level_state_a70ca1b44d3e6cbe40550d4e5a13e922e}{Level\+State}}, \mbox{\hyperlink{class_menu_state_ab69e4b4ade3ddd7aa95f7fbc69d6f3fd}{Menu\+State}}, and \mbox{\hyperlink{class_victory_state_a378e2df281434b297a38be4a34e146b8}{Victory\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/state.\+h\item 
+GUI/state.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/Tick.png</file>
+        <file>img/TickReverse.png</file>
+        <file>img/hearc_logo.png</file>
+        <file>img/floor_64x64.png</file>
+        <file>img/spikes_64x64.png</file>
+        <file>img/end_64x64.png</file>
+        <file>img/start_64x64.png</file>
+        <file>img/trapFloor_64x64.png</file>
+        <file>img/Bloc.png</file>
+        <file>img/Claw.png</file>
+        <file>img/Cloud.png</file>
+        <file>img/Spikes.png</file>
+        <file>img/Toilet.png</file>
+        <file>img/Stickman.png</file>
+        <file>img/jump_64x64.png</file>
+        <file>img/reverse_64x64.png</file>
+        <file>img/sprint_64x64.png</file>
+        <file>img/LeakMan_LOGO.png</file>
+        <file>img/level.png</file>
+        <file>img/Stickman_Unique.jpg</file>
+        <file>img/Stickman_Unique.ico</file>
+    </qresource>
+</RCC>

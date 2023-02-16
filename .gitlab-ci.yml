@@ -1,0 +1,49 @@
+# this helps speed our Docker containers a bit because by default it uses vfs which is slower
+variables:
+  DOCKER_DRIVER: overlay2
+
+stages:
+  # - build-image
+  - build
+  - test
+  - deploy
+
+build-job:
+  image:
+    name: gitlab-etu.ing.he-arc.ch:5050/lucas.perrin1/docker-image-gelo:latest
+    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
+  tags:
+    - alpine-docker # here we specify the runner to use
+  stage: build
+  artifacts:
+    paths:
+    - ./docDoxygen
+    - ./build/tests
+  script:
+    - mkdir build
+    - cd build
+    - cmake -G "Ninja" ../LeakMan/
+    - ninja
+    - cmake --build . --target BuildDoc
+
+test-job:
+  image:
+    name: gitlab-etu.ing.he-arc.ch:5050/lucas.perrin1/docker-image-gelo:latest
+    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
+  tags:
+    - alpine-docker
+  stage: test
+  script:
+    - echo "Running tests..."
+    - ./build/tests
+
+deploy-job:
+  image:
+    name: gitlab-etu.ing.he-arc.ch:5050/lucas.perrin1/docker-image-gelo:latest
+    entrypoint: [ '/bin/bash', '-c', 'ln -snf /bin/bash /bin/sh && /bin/bash -c $0' ]
+  tags:
+    - alpine-docker
+  stage: deploy
+  script:
+    - echo "Deploying..."
+

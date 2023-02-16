@@ -1,0 +1,59 @@
+\hypertarget{actor_8h_source}{}\doxysection{actor.\+h}
+\label{actor_8h_source}\index{GUI/actor.h@{GUI/actor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}componenttypeconverter.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_actor}{Actor}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \textcolor{comment}{// Public constructor(s)}}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_actor}{Actor}}()}
+\DoxyCodeLine{16         : mMarkedForReset(\textcolor{keyword}{false})}
+\DoxyCodeLine{17         , mMarkedForRemoval(\textcolor{keyword}{false})}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_actor}{\string~Actor}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{// Public method(s)}}
+\DoxyCodeLine{34 \textcolor{comment}{}    \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_actor_aed9ad7a5e91df15caecca7fe2d673a76}{addComponent}}()}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         ComponentTypeConverter::Type type = ComponentTypeConverter::getType<T>();}
+\DoxyCodeLine{38         mComponents.try\_emplace(type, std::make\_unique<T>(*\textcolor{keyword}{this}));}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{52     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{53     T* \mbox{\hyperlink{class_actor_a91396cd22a797cefef479641d31e5e96}{getComponent}}()}
+\DoxyCodeLine{54     \{}
+\DoxyCodeLine{55         \textcolor{keyword}{auto} component = mComponents.find(ComponentTypeConverter::getType<T>());}
+\DoxyCodeLine{56         \textcolor{keywordflow}{return} (component != mComponents.end()) ? \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(component-\/>second.get()) : \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{70     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{71     \textcolor{keyword}{const} T* \mbox{\hyperlink{class_actor_ac231468fe214b9bb97ae9e65dbc9e1fe}{getComponent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{72 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{73         \textcolor{keyword}{auto} component = mComponents.find(ComponentTypeConverter::getType<T>());}
+\DoxyCodeLine{74         \textcolor{keywordflow}{return} (component != mComponents.end()) ? \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }T*\textcolor{keyword}{>}(component-\/>second.get()) : \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} markForReset(\textcolor{keywordtype}{bool} flag) \textcolor{keyword}{noexcept} \{ mMarkedForReset = flag; \}}
+\DoxyCodeLine{78     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} markForRemoval(\textcolor{keywordtype}{bool} flag) \textcolor{keyword}{noexcept} \{ mMarkedForRemoval = flag; \}}
+\DoxyCodeLine{79     [[nodiscard]] \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} isMarkedForReset() const noexcept \{ \textcolor{keywordflow}{return} mMarkedForReset; \}}
+\DoxyCodeLine{80     [[nodiscard]] \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} isMarkedForRemoval() const noexcept \{ \textcolor{keywordflow}{return} mMarkedForRemoval; \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{83     \textcolor{comment}{// Protected virtual method(s)}}
+\DoxyCodeLine{84     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} tickUpdate(qreal dt) \{\}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{private}:}
+\DoxyCodeLine{87     \textcolor{comment}{// Private member(s)}}
+\DoxyCodeLine{88     std::unordered\_map<ComponentTypeConverter::Type, std::unique\_ptr<Component>> mComponents; }
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} mMarkedForReset;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} mMarkedForRemoval;}
+\DoxyCodeLine{91 \};}
+
+\end{DoxyCode}

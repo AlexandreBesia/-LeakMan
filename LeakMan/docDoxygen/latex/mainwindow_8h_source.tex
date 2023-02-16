@@ -1,0 +1,44 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\label{mainwindow_8h_source}\index{GUI/mainwindow.h@{GUI/mainwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <qdebug.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QKeyEvent>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <opencv2/core.hpp>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <opencv2/highgui.hpp>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <opencv2/imgcodecs.hpp>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}statestack.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     Q\_OBJECT}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \textcolor{comment}{// Public constructor(s)}}
+\DoxyCodeLine{20     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_main_window_aeccc930df5863145c179373f5b534162}{MainWindow}}(QApplication* app);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{// Public method(s)}}
+\DoxyCodeLine{23     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} registerState(uint32\_t stateId);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a250146eff4a15bcbe5cafb6c181e9098}{pushState}}(uint32\_t stateId);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28     \textcolor{comment}{// Private member(s)}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_state_stack}{StateStack}}* mStateStack;}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// Public method(s)}}
+\DoxyCodeLine{33 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} MainWindow::registerState(uint32\_t stateId)}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     \textcolor{keyword}{static\_assert}(std::is\_base\_of\_v<State, T>, \textcolor{stringliteral}{"{}MainWindow::registerState -\/ T provided has to inherit from State."{}});}
+\DoxyCodeLine{37     mStateStack-\/>\mbox{\hyperlink{class_state_stack_acc63edbc57b71edac05a24e52c26440c}{registerState}}<T>(stateId);}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}

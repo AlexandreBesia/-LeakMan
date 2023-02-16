@@ -1,0 +1,35 @@
+\hypertarget{levelselectionstate_8h_source}{}\doxysection{levelselectionstate.\+h}
+\label{levelselectionstate_8h_source}\index{GUI/levelselectionstate.h@{GUI/levelselectionstate.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}state.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{// Forward declaration(s)}}
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_level}{Level}};}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_level_selection_state}{LevelSelectionState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     Q\_OBJECT}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \textcolor{comment}{// Public constructor(s)}}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_level_selection_state}{LevelSelectionState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}* stateStack, QMainWindow* window);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{comment}{// Public static method(s)}}
+\DoxyCodeLine{25 \textcolor{comment}{}    [[nodiscard]] \textcolor{keyword}{static} QString \mbox{\hyperlink{class_level_selection_state_a22323b471bd47d0368d655a32cdfae0d}{acceptLevelFilename}}() \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27     \textcolor{comment}{// Private method(s)}}
+\DoxyCodeLine{31 \textcolor{comment}{}    \textcolor{keywordtype}{void} setupLevelGrid();}
+\DoxyCodeLine{37     QIcon levelToIcon(\mbox{\hyperlink{class_level}{Level}}\& level);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} backToMenu();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{43     \textcolor{comment}{// Private static member(s)}}
+\DoxyCodeLine{44     \textcolor{keyword}{static} QString selectedLevelFilename;}
+\DoxyCodeLine{45 \};}
+
+\end{DoxyCode}

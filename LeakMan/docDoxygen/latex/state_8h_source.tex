@@ -1,0 +1,49 @@
+\hypertarget{state_8h_source}{}\doxysection{state.\+h}
+\label{state_8h_source}\index{GUI/state.h@{GUI/state.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QGraphicsView>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{// Forward declaration(s)}}
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_state_stack}{StateStack}};}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}} : \textcolor{keyword}{public} QGraphicsView}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     Q\_OBJECT}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \textcolor{comment}{// Public constructor(s)}}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_state}{State}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_state}{State}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_state}{State}}(\mbox{\hyperlink{class_state}{State}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_state}{\string~State}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{// Public operator(s)}}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_state}{State}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{class_state}{State}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_state}{State}}\& operator=(\mbox{\hyperlink{class_state}{State}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{// Public virtual method(s)}}
+\DoxyCodeLine{32 \textcolor{comment}{}    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_state_af8a27f842792e7580042d1d05b4e788b}{update}}(qreal dt);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35     \textcolor{comment}{// Protected constructor(s)}}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_state}{State}}(\mbox{\hyperlink{class_state_stack}{StateStack}}* stateStack, QMainWindow* window);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{// Protected method(s)}}
+\DoxyCodeLine{44 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a16992b94315248b2d782023c9c91040e}{requestStatePush}}(uint32\_t stateId);}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a169b1ec0de4b43771127a95fd609b887}{requestStateRemove}}(uint32\_t stateId);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a4b602bed9bf0179ee5f6748fce340ae6}{requestStateClear}}();}
+\DoxyCodeLine{62     [[nodiscard]] \mbox{\hyperlink{class_state}{State}}* \mbox{\hyperlink{class_state_aa76d4a08d1305724a909baf0b0ad2ed8}{requestState}}(uint32\_t stateId);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{65     \textcolor{comment}{// Protected member(s)}}
+\DoxyCodeLine{66     QGraphicsScene* mScene;}
+\DoxyCodeLine{67     QMainWindow*    mWindow;}
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{69     \textcolor{comment}{// Private member(s)}}
+\DoxyCodeLine{70     \mbox{\hyperlink{class_state_stack}{StateStack}}*     mStateStack;}
+\DoxyCodeLine{71 \};}
+
+\end{DoxyCode}

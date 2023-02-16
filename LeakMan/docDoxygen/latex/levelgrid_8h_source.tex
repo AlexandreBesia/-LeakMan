@@ -1,0 +1,53 @@
+\hypertarget{levelgrid_8h_source}{}\doxysection{levelgrid.\+h}
+\label{levelgrid_8h_source}\index{notGUI/levelgrid.h@{notGUI/levelgrid.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QGraphicsItem>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{8 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_tile}{Tile}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     QPointF \mbox{\hyperlink{struct_tile_a0632e4a29b0caf5bb8925cc6c81df1b8}{position}}; }
+\DoxyCodeLine{11     QSize   \mbox{\hyperlink{struct_tile_a7ff6c878bfc61a7f5580f4ceb3d63c5d}{size}};     }
+\DoxyCodeLine{12     qint32  \mbox{\hyperlink{struct_tile_aafc5e9f3db1b4fb74d2fdb42883243ab}{column}};   }
+\DoxyCodeLine{13     qint32  \mbox{\hyperlink{struct_tile_a6d70c68e998cc03cc500b668adbc0160}{row}};      }
+\DoxyCodeLine{14 \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_level_grid}{LevelGrid}} : \textcolor{keyword}{public} QGraphicsItem}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \textcolor{comment}{// Public constructor(s)}}
+\DoxyCodeLine{30 \textcolor{comment}{}    \mbox{\hyperlink{class_level_grid_a878057132a0e5a02fec8cd7a95ac1c87}{LevelGrid}}(\textcolor{keyword}{const} QSize\& tileSize, qint32 columns, qint32 rows, QGraphicsItem* parent);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{comment}{// Public method(s)}}
+\DoxyCodeLine{37 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_level_grid_a1aef5366a0bdde1a13d8fd65c9ed13b6}{setSize}}(\textcolor{keyword}{const} QSize\& gridSize);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{46     QPointF \mbox{\hyperlink{class_level_grid_ac3dc76716eb0cddf401b26df9de76eef}{getTilePosition}}(qint32 column, qint32 row) \textcolor{keyword}{const};}
+\DoxyCodeLine{53     \mbox{\hyperlink{struct_tile}{Tile}} \mbox{\hyperlink{class_level_grid_a63840553b49b759fbe4eae1093b994f6}{getClosestTile}}(\textcolor{keyword}{const} QPointF\& pos) \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{59     [[nodiscard]] \textcolor{keyword}{inline} \textcolor{keyword}{const} QSize\& \mbox{\hyperlink{class_level_grid_a8fb68201484bb7ed4e57b47495e751b1}{getTileSize}}() const noexcept \{ \textcolor{keywordflow}{return} mTileSize; \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{// Public virtual method(s)}}
+\DoxyCodeLine{66 \textcolor{comment}{}    \textcolor{keyword}{virtual} QRectF \mbox{\hyperlink{class_level_grid_a525452788020dfcd96e3e30480c35f92}{boundingRect}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{70     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_level_grid_a5571d80e9beb54718ce14d8c120f4dea}{paint}}(QPainter* painter, \textcolor{keyword}{const} QStyleOptionGraphicsItem* option, QWidget* widget) \textcolor{keyword}{override};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// Public static method(s)}}
+\DoxyCodeLine{79 \textcolor{comment}{}    [[nodiscard]] \textcolor{keyword}{static} \mbox{\hyperlink{class_level_grid}{LevelGrid}}* \mbox{\hyperlink{class_level_grid_a531de1f616ceae6e717418019fad9399}{deserialize}}(QDataStream\& in, QGraphicsItem* parent);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{// Friend operator(s)}}
+\DoxyCodeLine{88 \textcolor{comment}{}    \textcolor{keyword}{friend} QDataStream\& \mbox{\hyperlink{class_level_grid_af03408d41ebaa00850ed723a2fad4af8}{operator<<}}(QDataStream\& out, \mbox{\hyperlink{class_level_grid}{LevelGrid}}\& levelGrid);}
+\DoxyCodeLine{89 \textcolor{keyword}{private}:}
+\DoxyCodeLine{90     \textcolor{comment}{// Private method(s)}}
+\DoxyCodeLine{98 \textcolor{comment}{}    QPair<qreal, qint32> findClosestTileAlongAxis(qint32 indexCount, qreal pos, qint32 size) \textcolor{keyword}{const};}
+\DoxyCodeLine{102     \textcolor{keywordtype}{void} createLines();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{private}:}
+\DoxyCodeLine{105     \textcolor{comment}{// Private member(s)}}
+\DoxyCodeLine{106     QVector<QLine> mLines;       }
+\DoxyCodeLine{107     QSize          mTileSize;    }
+\DoxyCodeLine{108     qint32         mColumnCount; }
+\DoxyCodeLine{109     qint32         mRowCount;    }
+\DoxyCodeLine{110 \};}
+
+\end{DoxyCode}

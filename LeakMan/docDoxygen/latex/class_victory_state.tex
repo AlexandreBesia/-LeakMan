@@ -1,0 +1,54 @@
+\hypertarget{class_victory_state}{}\doxysection{Victory\+State Class Reference}
+\label{class_victory_state}\index{VictoryState@{VictoryState}}
+Inheritance diagram for Victory\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_victory_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_victory_state_ab899fa9ddccd95494d811ec5d67d13de}\label{class_victory_state_ab899fa9ddccd95494d811ec5d67d13de}} 
+{\bfseries Victory\+State} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} $\ast$state\+Stack, QMain\+Window $\ast$window)
+\item 
+virtual bool \mbox{\hyperlink{class_victory_state_a378e2df281434b297a38be4a34e146b8}{update}} (qreal dt) override final
+\begin{DoxyCompactList}\small\item\em Updates the state\textquotesingle{}s elements every frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_victory_state_a117dafe77024794bdb1294e0b50be548}\label{class_victory_state_a117dafe77024794bdb1294e0b50be548}} 
+void {\bfseries next\+Level} ()
+\item 
+\mbox{\Hypertarget{class_victory_state_a7223c7a124b2736f12df8aaf12c68a5e}\label{class_victory_state_a7223c7a124b2736f12df8aaf12c68a5e}} 
+void {\bfseries leave} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_victory_state_a378e2df281434b297a38be4a34e146b8}\label{class_victory_state_a378e2df281434b297a38be4a34e146b8}} 
+\index{VictoryState@{VictoryState}!update@{update}}
+\index{update@{update}!VictoryState@{VictoryState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Victory\+State\+::update (\begin{DoxyParamCaption}\item[{qreal}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the state\textquotesingle{}s elements every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The time difference between this frame and the previous one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to allow the other states to update their elements, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_state_af8a27f842792e7580042d1d05b4e788b}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/victorystate.\+h\item 
+GUI/victorystate.\+cpp\end{DoxyCompactItemize}

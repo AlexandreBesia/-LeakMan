@@ -1,0 +1,78 @@
+\hypertarget{class_component}{}\doxysection{Component Class Reference}
+\label{class_component}\index{Component@{Component}}
+
+
+Abstract base class used in component-\/based design.  
+
+
+
+
+{\ttfamily \#include $<$component.\+h$>$}
+
+Inheritance diagram for Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_component_ad82d7393e339c1b19cc17a0d55b5674d}{$\sim$\+Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_component_aeb06ab9f0d085aeb8055473fdd3c52e4}{Component}} (\mbox{\hyperlink{class_actor}{Actor}} \&associated\+Actor) noexcept
+\begin{DoxyCompactList}\small\item\em Constructs the component by providing the associated actor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_component_a22d85c1e103162865ef1a9ee18ff9d81}\label{class_component_a22d85c1e103162865ef1a9ee18ff9d81}} 
+\mbox{\hyperlink{class_actor}{Actor}} \& {\bfseries m\+Associated\+Actor}
+\begin{DoxyCompactList}\small\item\em The actor to which the component is attached. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class used in component-\/based design. 
+
+\begin{DoxyNote}{Note}
+No direct instance of this may be created. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_component_ad82d7393e339c1b19cc17a0d55b5674d}\label{class_component_ad82d7393e339c1b19cc17a0d55b5674d}} 
+\index{Component@{Component}!````~Component@{$\sim$Component}}
+\index{````~Component@{$\sim$Component}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{$\sim$Component()}{~Component()}}
+{\footnotesize\ttfamily virtual Component\+::$\sim$\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+A virtual destructor is needed as this class will be inherited. \mbox{\Hypertarget{class_component_aeb06ab9f0d085aeb8055473fdd3c52e4}\label{class_component_aeb06ab9f0d085aeb8055473fdd3c52e4}} 
+\index{Component@{Component}!Component@{Component}}
+\index{Component@{Component}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}}
+{\footnotesize\ttfamily Component\+::\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \&}]{associated\+Actor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Constructs the component by providing the associated actor. 
+
+\begin{DoxyNote}{Note}
+No direct instance of this class may be created.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em associated\+Actor} & The actor to which the component will be attached \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/component.\+h\item 
+GUI/component.\+cpp\end{DoxyCompactItemize}

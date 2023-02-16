@@ -1,0 +1,131 @@
+\hypertarget{class_state_stack}{}\doxysection{State\+Stack Class Reference}
+\label{class_state_stack}\index{StateStack@{StateStack}}
+
+
+The class used to manage the \mbox{\hyperlink{class_state}{State}} instances.  
+
+
+
+
+{\ttfamily \#include $<$statestack.\+h$>$}
+
+Inheritance diagram for State\+Stack\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_state_stack}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_stack_af804142a55cd477767353e0abbcc218c}\label{class_state_stack_af804142a55cd477767353e0abbcc218c}} 
+enum class \mbox{\hyperlink{class_state_stack_af804142a55cd477767353e0abbcc218c}{Action}} \{ {\bfseries Push}
+, {\bfseries Remove}
+, {\bfseries Clear}
+ \}
+\begin{DoxyCompactList}\small\item\em The enumeration indicating the action to apply to a registered state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_stack_a6ef917a5800ac1c825471cb4e2cfddc8}\label{class_state_stack_a6ef917a5800ac1c825471cb4e2cfddc8}} 
+{\bfseries State\+Stack} (QApplication $\ast$app, QMain\+Window $\ast$parent)
+\item 
+\mbox{\Hypertarget{class_state_stack_aa26fd44249ce068f49213b9c99fa35e2}\label{class_state_stack_aa26fd44249ce068f49213b9c99fa35e2}} 
+{\bfseries State\+Stack} (const \mbox{\hyperlink{class_state_stack}{State\+Stack}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_state_stack_a6a992495ef168ba88d071b6af3b14aeb}\label{class_state_stack_a6a992495ef168ba88d071b6af3b14aeb}} 
+{\bfseries State\+Stack} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{class_state_stack_ae7bb171109bef9080f4382d76196b9fd}\label{class_state_stack_ae7bb171109bef9080f4382d76196b9fd}} 
+\mbox{\hyperlink{class_state_stack}{State\+Stack}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_state_stack}{State\+Stack}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_state_stack_a25352a9829e334617fa5a68f85d52468}\label{class_state_stack_a25352a9829e334617fa5a68f85d52468}} 
+\mbox{\hyperlink{class_state_stack}{State\+Stack}} \& {\bfseries operator=} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&\&)=delete
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_state_stack_acc63edbc57b71edac05a24e52c26440c}{register\+State}} (uint32\+\_\+t state\+Id)
+\begin{DoxyCompactList}\small\item\em Creates the association between the type and identifier provided. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}} $\ast$ \mbox{\hyperlink{class_state_stack_a7cf930143babe73cfd7823a5a2daa11b}{get}} (uint32\+\_\+t state\+Id) const
+\begin{DoxyCompactList}\small\item\em Retrieves the base pointer to the \mbox{\hyperlink{class_state}{State}} associated to the identifier provided. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_stack_acefe20b1a5e24b01216296b037748245}{push}} (uint32\+\_\+t state\+Id)
+\begin{DoxyCompactList}\small\item\em Enqueues a push command for the state associated to the identifier provided. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_stack_ad1a7ccee795dce670c81ad51e26cc057}{remove}} (uint32\+\_\+t state\+Id)
+\begin{DoxyCompactList}\small\item\em Enqueues a remove command for the state associated to the identifier provided. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_state_stack_a46dc5cb12f7a9ab9ff062286637e1ed3}\label{class_state_stack_a46dc5cb12f7a9ab9ff062286637e1ed3}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Enqueues a clear command to remove all pushed states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class used to manage the \mbox{\hyperlink{class_state}{State}} instances. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_stack_a7cf930143babe73cfd7823a5a2daa11b}\label{class_state_stack_a7cf930143babe73cfd7823a5a2daa11b}} 
+\index{StateStack@{StateStack}!get@{get}}
+\index{get@{get}!StateStack@{StateStack}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state}{State}} $\ast$ State\+Stack\+::get (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the base pointer to the \mbox{\hyperlink{class_state}{State}} associated to the identifier provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Id} & The unique identifier associated to the state to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_state}{State}} requested or nullptr if it wasn\textquotesingle{}t found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_stack_acefe20b1a5e24b01216296b037748245}\label{class_state_stack_acefe20b1a5e24b01216296b037748245}} 
+\index{StateStack@{StateStack}!push@{push}}
+\index{push@{push}!StateStack@{StateStack}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void State\+Stack\+::push (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enqueues a push command for the state associated to the identifier provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Id} & The unique identifier of the state to push. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_stack_acc63edbc57b71edac05a24e52c26440c}\label{class_state_stack_acc63edbc57b71edac05a24e52c26440c}} 
+\index{StateStack@{StateStack}!registerState@{registerState}}
+\index{registerState@{registerState}!StateStack@{StateStack}}
+\doxysubsubsection{\texorpdfstring{registerState()}{registerState()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void State\+Stack\+::register\+State (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption})}
+
+
+
+Creates the association between the type and identifier provided. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em state\+Id} & The unique identifier to associate with the type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_stack_ad1a7ccee795dce670c81ad51e26cc057}\label{class_state_stack_ad1a7ccee795dce670c81ad51e26cc057}} 
+\index{StateStack@{StateStack}!remove@{remove}}
+\index{remove@{remove}!StateStack@{StateStack}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void State\+Stack\+::remove (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{state\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enqueues a remove command for the state associated to the identifier provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Id} & The unique identifier of the state to remove. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/statestack.\+h\item 
+GUI/statestack.\+cpp\end{DoxyCompactItemize}

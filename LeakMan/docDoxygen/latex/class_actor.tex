@@ -1,0 +1,138 @@
+\hypertarget{class_actor}{}\doxysection{Actor Class Reference}
+\label{class_actor}\index{Actor@{Actor}}
+
+
+Class used for a component-\/based design.  
+
+
+
+
+{\ttfamily \#include $<$actor.\+h$>$}
+
+Inheritance diagram for Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_actor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_actor_aed9ad7a5e91df15caecca7fe2d673a76}{add\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds the component specified by the template typename. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \mbox{\hyperlink{class_actor_a91396cd22a797cefef479641d31e5e96}{get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the component specified by the template typename. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\const T $\ast$ \mbox{\hyperlink{class_actor_ac231468fe214b9bb97ae9e65dbc9e1fe}{get\+Component}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the component specified by the template typename. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_actor_a7634384efdad067d7c79a8ee7f11b7c6}\label{class_actor_a7634384efdad067d7c79a8ee7f11b7c6}} 
+void {\bfseries mark\+For\+Reset} (bool flag) noexcept
+\item 
+\mbox{\Hypertarget{class_actor_a845083ab90fa45c8287234c189c18298}\label{class_actor_a845083ab90fa45c8287234c189c18298}} 
+void {\bfseries mark\+For\+Removal} (bool flag) noexcept
+\item 
+\mbox{\Hypertarget{class_actor_a7a3ed8a533ebe8c5c2125c6bb748940b}\label{class_actor_a7a3ed8a533ebe8c5c2125c6bb748940b}} 
+bool {\bfseries is\+Marked\+For\+Reset} () const noexcept
+\item 
+\mbox{\Hypertarget{class_actor_a79d1944f1980465abdb61d78ae49ddfd}\label{class_actor_a79d1944f1980465abdb61d78ae49ddfd}} 
+bool {\bfseries is\+Marked\+For\+Removal} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_actor_afe2588b35f28550d557226adc05696ef}{tick\+Update}} (qreal dt)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class used for a component-\/based design. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_actor_aed9ad7a5e91df15caecca7fe2d673a76}\label{class_actor_aed9ad7a5e91df15caecca7fe2d673a76}} 
+\index{Actor@{Actor}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!Actor@{Actor}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Actor\+::add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds the component specified by the template typename. 
+
+The component is only added if the same type isn\textquotesingle{}t already in the component list.
+
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{actor-\/>addComponent<\mbox{\hyperlink{class_physics_component}{PhysicsComponent}}>();}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_actor_a91396cd22a797cefef479641d31e5e96}{get\+Component()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_actor_a91396cd22a797cefef479641d31e5e96}\label{class_actor_a91396cd22a797cefef479641d31e5e96}} 
+\index{Actor@{Actor}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!Actor@{Actor}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ Actor\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the component specified by the template typename. 
+
+\begin{DoxyReturn}{Returns}
+The component associated or nullptr if it wasn\textquotesingle{}t found
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} physics = actor-\/>getComponent<\mbox{\hyperlink{class_physics_component}{PhysicsComponent}}>();}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_actor_aed9ad7a5e91df15caecca7fe2d673a76}{add\+Component()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_actor_ac231468fe214b9bb97ae9e65dbc9e1fe}\label{class_actor_ac231468fe214b9bb97ae9e65dbc9e1fe}} 
+\index{Actor@{Actor}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!Actor@{Actor}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T $\ast$ Actor\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the component specified by the template typename. 
+
+\begin{DoxyReturn}{Returns}
+The component associated or nullptr if it wasn\textquotesingle{}t found
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{auto} physics = actor-\/>getComponent<\mbox{\hyperlink{class_physics_component}{PhysicsComponent}}>();}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_actor_aed9ad7a5e91df15caecca7fe2d673a76}{add\+Component()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_actor_afe2588b35f28550d557226adc05696ef}\label{class_actor_afe2588b35f28550d557226adc05696ef}} 
+\index{Actor@{Actor}!tickUpdate@{tickUpdate}}
+\index{tickUpdate@{tickUpdate}!Actor@{Actor}}
+\doxysubsubsection{\texorpdfstring{tickUpdate()}{tickUpdate()}}
+{\footnotesize\ttfamily virtual void Actor\+::tick\+Update (\begin{DoxyParamCaption}\item[{qreal}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_block_a8a12b2ee657214ffc42395e7c9acc4ae}{Block}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+GUI/actor.\+h\end{DoxyCompactItemize}
